@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/violin.iml" filepath="$PROJECT_DIR$/violin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android/violin_android.iml" filepath="$PROJECT_DIR$/android/violin_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/music_app.iml" filepath="$PROJECT_DIR$/music_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/music_app_android.iml" filepath="$PROJECT_DIR$/android/music_app_android.iml" />
     </modules>
   </component>
 </project>

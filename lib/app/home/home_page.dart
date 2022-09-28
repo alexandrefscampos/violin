@@ -7,32 +7,33 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: VColors.primary_color,
+      backgroundColor: VColors.primaryColor,
       drawer: Drawer(
-        backgroundColor: VColors.primary_color,
-        child: Column(children: []),
+        backgroundColor: VColors.primaryColor,
+        child: Column(children: const []),
       ),
       appBar: AppBar(
-        backgroundColor: VColors.primary_color,
+        backgroundColor: VColors.primaryColor,
         elevation: 0,
-        actions: [CircleAvatar()],
+        actions: const [CircleAvatar()],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: VColors.primary_color,
-        selectedItemColor: VColors.secondary_color,
+        backgroundColor: VColors.primaryColor,
+        selectedItemColor: VColors.secondaryColor,
         unselectedItemColor: VColors.white.withOpacity(0.5),
-        items: [
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.people), label: ''),
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Hello, User!',
               style: TextStyle(
                 fontSize: 18,
@@ -41,14 +42,14 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 1),
-            Text(
+            const Text(
               'Review or track albums you\'ve watched...',
               style: TextStyle(
                 color: Colors.white,
               ),
             ),
             const SizedBox(height: 24),
-            Text(
+            const Text(
               'Popular this month',
               style: TextStyle(
                 fontSize: 12,
@@ -74,7 +75,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
-            Text(
+            const Text(
               'Popular this month',
               style: TextStyle(
                 fontSize: 12,
@@ -87,7 +88,7 @@ class HomePage extends StatelessWidget {
               height: 200,
               child: Expanded(
                 child: ListView.separated(
-                  separatorBuilder: (context, index) => SizedBox(
+                  separatorBuilder: (context, index) => const SizedBox(
                     width: 16,
                   ),
                   shrinkWrap: true,
@@ -107,23 +108,23 @@ class HomePage extends StatelessWidget {
                       const SizedBox(height: 8),
                       Text(
                         albumList[index].name!,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
-                          color: VColors.secondary_color,
+                          color: VColors.secondaryColor,
                         ),
                       ),
                       const SizedBox(height: 4),
                       Row(
-                        children: [
+                        children: const [
                           CircleAvatar(),
-                          const SizedBox(width: 4),
+                          SizedBox(width: 4),
                           Text(
                             'Alejandro',
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
-                              color: VColors.secondary_color,
+                              color: VColors.secondaryColor,
                             ),
                           ),
                         ],

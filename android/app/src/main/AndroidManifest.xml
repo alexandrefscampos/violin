@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.music_app">
+    package="com.example.violin">
     <queries>
   <!-- If your app checks for SMS support -->
         <intent>
@@ -13,7 +13,7 @@
         </intent>
     </queries>
     <application
-        android:label="music_app"
+        android:label="violin"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

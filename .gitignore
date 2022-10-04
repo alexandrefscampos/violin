@@ -152,21 +152,4 @@ lib/generated_plugin_registrant.dart
 **/coverage
 **/metrics
 
-# Exceptions to above rules.
-!**/ios/**/default.mode1v3
-!**/ios/**/default.mode2v3
-!**/ios/**/default.pbxuser
-!**/ios/**/default.perspectivev3
-!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packageslib/widgets/model/action.g.dart
-.packages 2
-examples/honey_render/ios/Flutter/Generated 2.xcconfig
-examples/honey_render/ios/Flutter/flutter_export_environment 2.sh
-/parsers/
-/rendering/
-/widgets/
-/hornet_widget/
-/hornet_core/
-/honeycomb_bees/
-/default_components/
-
 full_coverage_test.dart

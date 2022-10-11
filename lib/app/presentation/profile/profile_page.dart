@@ -24,6 +24,7 @@ class ProfilePage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(bottom: 60),
               child: Image.network(
+                //TODO add baner feature
                 'https://www.univates.br/radio/media/noticias_responsivo/31049/-1645810170.8855_1440_900.jpg',
                 height: 200,
                 width: double.maxFinite,
@@ -34,7 +35,7 @@ class ProfilePage extends StatelessWidget {
               child: Align(
                 alignment: Alignment(0, 0.8),
                 child: CircleAvatar(
-                  radius: 50,
+                  radius: 50, //TODO  add profile pic
                 ),
               ),
             )

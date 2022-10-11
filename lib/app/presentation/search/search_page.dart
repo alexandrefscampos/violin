@@ -50,7 +50,7 @@ class _SearchPageState extends State<SearchPage> {
               ),
             ),
             SizedBox(height: 8),
-            // SizedBox( //TODO IMPLEMENT IT
+            // SizedBox(//TODO search implement filter
             //   height: 50,
             //   child: ListView.separated(
             //     scrollDirection: Axis.horizontal,
@@ -129,6 +129,7 @@ class _SearchPageState extends State<SearchPage> {
 
   _showAddAlbum(Results result) {
     showModalBottomSheet(
+      //TODO improve bottomsheet
       context: context,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),

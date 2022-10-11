@@ -4,8 +4,8 @@
 import 'package:flutter/material.dart';
 import 'package:violin/app/core/colors.dart';
 import 'package:violin/app/mocks/album_list_mock.dart';
-import 'package:violin/app/profile/widgets/user_statistic.dart';
-import 'package:violin/app/shared/widgets/album_preview.dart';
+import 'package:violin/app/presentation/profile/widgets/user_statistic.dart';
+import 'package:violin/app/presentation/shared/widgets/album_preview.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({

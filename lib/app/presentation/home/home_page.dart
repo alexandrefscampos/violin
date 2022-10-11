@@ -4,8 +4,8 @@
 import 'package:flutter/material.dart';
 import 'package:violin/app/core/colors.dart';
 import 'package:violin/app/mocks/album_list_mock.dart';
-import 'package:violin/app/profile/profile_page.dart';
-import 'package:violin/app/search/search_page.dart';
+import 'package:violin/app/presentation/profile/profile_page.dart';
+import 'package:violin/app/presentation/search/search_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -44,7 +44,10 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(icon: Icon(Icons.people), label: ''),
         ],
       ),
-      body: screenList[_actualIndex],
+      body: IndexedStack(
+        index: _actualIndex,
+        children: screenList,
+      ),
     );
   }
 }

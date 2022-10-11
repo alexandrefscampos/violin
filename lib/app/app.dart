@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:violin/app/home/home_page.dart';
+import 'package:violin/app/presentation/home/home_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

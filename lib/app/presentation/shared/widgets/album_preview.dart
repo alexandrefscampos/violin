@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 
 class AlbumPreview extends StatelessWidget {
   final String path;
+  final double height;
+  final double width;
   const AlbumPreview({
     Key? key,
     required this.path,
+    this.height = 120,
+    this.width = 90,
   }) : super(key: key);
 
   @override
@@ -13,8 +17,8 @@ class AlbumPreview extends StatelessWidget {
       borderRadius: BorderRadius.circular(10),
       child: Image.network(
         path,
-        height: 120,
-        width: 90,
+        height: height,
+        width: width,
         fit: BoxFit.cover,
       ),
     );

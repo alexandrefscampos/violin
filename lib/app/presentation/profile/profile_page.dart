@@ -6,6 +6,7 @@ import 'package:violin/app/core/colors.dart';
 import 'package:violin/app/domain/search/models/search_response_model.dart';
 import 'package:violin/app/mocks/album_list_mock.dart';
 import 'package:violin/app/mocks/user_mock.dart';
+import 'package:violin/app/presentation/albums/albums_page.dart';
 import 'package:violin/app/presentation/profile/widgets/user_statistic.dart';
 import 'package:violin/app/presentation/shared/widgets/album_preview.dart';
 
@@ -52,25 +53,25 @@ class ProfilePage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    '${userMock.followers} followers',
-                    style: TextStyle(color: Colors.white, fontSize: 12),
-                  ),
-                  SizedBox(
-                    width: 24,
-                  ),
-                  Text(
-                    '${userMock.following} followings',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                    ),
-                  ),
-                ],
-              ),
+              // Row(///TODO create follow feature
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     Text(
+              //       '${userMock.followers} followers',
+              //       style: TextStyle(color: Colors.white, fontSize: 12),
+              //     ),
+              //     SizedBox(
+              //       width: 24,
+              //     ),
+              //     Text(
+              //       '${userMock.following} followings',
+              //       style: TextStyle(
+              //         color: Colors.white,
+              //         fontSize: 12,
+              //       ),
+              //     ),
+              //   ],
+              // ),
               SizedBox(height: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -99,7 +100,7 @@ class ProfilePage extends StatelessWidget {
               ),
               SizedBox(height: 24),
               Text(
-                'User favorite albums',
+                'User favorite albums', //TODO create fav albums
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16,
@@ -113,7 +114,9 @@ class ProfilePage extends StatelessWidget {
               ),
               SizedBox(height: 32),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pushNamed(AlbumsPage.routeName);
+                },
                 child: Column(
                   children: [
                     Row(

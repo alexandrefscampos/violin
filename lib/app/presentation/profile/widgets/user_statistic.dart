@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class UserStatistic extends StatelessWidget {
-  final String title;
+  final int title;
   final String statisticName;
   final Color textColor;
 
@@ -17,7 +17,7 @@ class UserStatistic extends StatelessWidget {
     return Column(
       children: [
         Text(
-          title,
+          title.toString(),
           style: TextStyle(
             color: textColor,
             fontSize: 24,

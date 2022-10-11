@@ -1,12 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:violin/app/core/colors.dart';
 import 'package:violin/app/core/consts.dart';
 import 'package:violin/app/data/repositories/search_repository_impl.dart';
 import 'package:violin/app/domain/search/models/search_response_model.dart';
 import 'package:violin/app/domain/search/search_service.dart';
+import 'package:violin/app/mocks/user_mock.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -83,39 +85,87 @@ class _SearchPageState extends State<SearchPage> {
             ),
             if (test != null)
               ...?test?.results?.map(
-                (e) => Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      Image.network(e.artworkUrl100 ?? ''),
-                      SizedBox(width: 16),
-                      Flexible(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              e.collectionName ?? '',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w700),
-                            ),
-                            SizedBox(height: 8),
-                            Text(
-                              e.artistName ?? '',
-                              style: TextStyle(
-                                color: Colors.white.withOpacity(0.7),
+                (e) => GestureDetector(
+                  onTap: () {
+                    _showAddAlbum(e);
+                  },
+                  child: Container(
+                    color: Colors.transparent,
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Image.network(e.artworkUrl100 ?? ''),
+                        SizedBox(width: 16),
+                        Flexible(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                e.collectionName ?? '',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700),
                               ),
-                            ),
-                          ],
+                              SizedBox(height: 8),
+                              Text(
+                                e.artistName ?? '',
+                                style: TextStyle(
+                                  color: Colors.white.withOpacity(0.7),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               )
           ],
         ),
       ),
+    );
+  }
+
+  _showAddAlbum(Results result) {
+    showModalBottomSheet(
+      context: context,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      backgroundColor: Colors.white,
+      builder: (BuildContext context) {
+        return Padding(
+          padding: const EdgeInsets.all(defaultPadding),
+          child: Column(
+            children: [
+              Text('You want to add this album?'),
+              TextButton(
+                onPressed: () async {
+                  userMock.totalAlbums = [
+                    ...userMock.totalAlbums,
+                    result
+                  ]; //TODO DONT LET ADD MULTIPLE TIMES THE SAME ALBUM
+                  Navigator.of(context).pop();
+                },
+                child: Text('Yes'),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text(
+                  'No',
+                  style: TextStyle(color: Colors.red),
+                ),
+              ),
+              // CachedNetworkImage(
+              //   imageUrl: result.artworkUrl100 ?? '',
+              // )
+            ],
+          ),
+        );
+      },
     );
   }
 }
